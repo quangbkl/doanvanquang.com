@@ -1,0 +1,69 @@
+html { 
+background: url(../images/bg.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+body {
+	background-color: transparent;
+}
+
+.bg-color {
+	
+}
+
+.navbar {
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 0px;
+}
+.footer {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.nav-link {
+	padding: 15px;
+	text-align: center;
+}
+.active {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.active:hover {
+	background-color: transparent;
+}
+.nav-link:hover {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.container {
+	background-color: ;
+}
+.icon-link {
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	cursor: pointer;
+	box-sizing: content-box;
+}
+.icon-link:hover {
+	background-color: transparent;
+	-webkit-transition: background-color 150ms ease-in-out;
+ 	transition: background-color 150ms ease-in-out;
+ 	width: 36px;
+	height: 36px;
+	line-height: 36px;
+}
+.icon-link:hover.facebook {
+ 	border: 2px solid #3b5998;
+}
+.icon-link:hover.twitter {
+ 	border: 2px solid #00aced;
+}
+.icon-link:hover.youtube {
+ 	border: 2px solid #df1c31;
+}
+

@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="545501124764-jkm8il1pk79l1hq34vs78sa6gufp0q6c.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <h2>Google API</h2>
+      <p id="demo">Text</p>
+
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+      <!-- <a href="#" onclick="signOut();">Sign out</a> -->
+      </br>
+
+      <form action="/action_page.php">
+        <div class="form-group">
+          <!-- <label for="email">Email:</label> -->
+          <input class="form-control" placeholder="Enter link" name="url_picture">
+        </div>
+
+        <div class="form-group">
+          <label for="sel1">Chọn Album:</label>
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload File</button>
+      </form>
+    </div>
+
+    <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId());
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+        document.getElementById("demo").innerText = googleUser;
+      };
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
+  </body>
+</html>
